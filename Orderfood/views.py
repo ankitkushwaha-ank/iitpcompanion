@@ -49,10 +49,14 @@ def canteen(request):
 # Show menu items from a specific canteen
 def menu_page(request, slug):
     user_id = request.session.get('user_id')
-    user = Users.objects.get(id=user_id)
     canteen = get_object_or_404(RegisterCanteen, slug=slug)
     items = MenuItem.objects.filter(canteen=canteen)
-    cart, total_price, total_item, all_items = [], 0, 0, []
+
+    cart = []
+    total_price = 0
+    total_item = 0
+    all_items = []
+    mobile_number = None  # ✅ Set default if user not logged in
 
     if user_id:
         try:
@@ -61,8 +65,13 @@ def menu_page(request, slug):
             total_price = sum(item.item_price * item.item_quantity for item in cart)
             total_item = sum(item.item_quantity for item in cart)
             all_items = [item.item_title for item in cart]
-            mobile_number = UserProfile.objects.get(user=user).mobile_number
-            print(mobile_number)
+
+            profile = UserProfile.objects.get(user=user)
+            mobile_number = profile.mobile_number
+        except Users.DoesNotExist:
+            print("❌ User not found")
+        except UserProfile.DoesNotExist:
+            print("⚠️ User profile not found")
         except Exception as e:
             print(f"Cart fetch error: {e}")
 
@@ -79,9 +88,8 @@ def menu_page(request, slug):
         'total_item': total_item,
         'canteen': canteen,
         'categorized_items': categorized_items,
-        'mobile_number' : mobile_number
+        'mobile_number': mobile_number,
     })
-
 
 # Add item to cart
 @require_login
