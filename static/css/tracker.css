@@ -348,7 +348,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 150px;
   background: #f9f9fb;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);

@@ -125,7 +125,7 @@
       </div>
       <div class="form-group">
         <label for="mobile">Mobile no.</label>
-        <input type="text" id="mobile" name="mobile" placeholder="your mobile no...." required>
+        <input type="text" id="mobile" name="mobile" placeholder="your mobile no...." value="{{ mobile_number }}" required>
       </div>
 
       <div class="form-row">
@@ -143,7 +143,7 @@
 
         <div class="form-column">
           <label>Quantity</label>
-          <input type="number" name="quantity" min="1" value="1" required>
+          <input type="number" name="quantity" min="1" value="{{ total_item }}" required>
         </div>
       </div>
 

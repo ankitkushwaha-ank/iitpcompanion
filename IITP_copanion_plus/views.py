@@ -1,11 +1,8 @@
 from django.contrib import messages
-from django.shortcuts import render, redirect, get_object_or_404
-
-from Restaurant.models import RegisterCanteen,MenuItem
+from django.shortcuts import  redirect, get_object_or_404
 from Webusers.models import Users, UserProfile
 from django.core.exceptions import ValidationError
 from Clubs.models import Club
-from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from Event_calendar.models import Event
 import json
@@ -45,10 +42,6 @@ def home(request):
     return render(request, 'general/index.html')
 
 def login(request):
-    # user = request.session.get('user_id')
-    # if user:
-    #     messages.error(request, "You are already loggin")
-    #     return redirect('home')
 
     if request.method == 'POST':
         email = request.POST['email']
@@ -328,7 +321,7 @@ def tracker_view(request):
         except Exception as e:
             print(f"❌ Skipping bus '{bus.name}' due to error: {e}")
             continue
-
+    buses = buses[:5]
 
     trains = []
     for train in Train.objects.all():
@@ -340,8 +333,9 @@ def tracker_view(request):
         except Exception as e:
             print(f"❌ Skipping train '{train.name}' due to error: {e}")
             continue
+    trains = trains[:5]
 
-    schedules = BusSchedule.objects.all()
+    schedules = BusSchedule.objects.all()[:15]
 
     context = {
         'buses': buses,
@@ -463,7 +457,7 @@ def edit_profile(request):
         profile.mobile_number = request.POST.get("mobile_number", profile.mobile_number)
 
         if request.FILES.get("profile_image"):
-            profile.profile_image = request.FILES["user/profile_image"]
+            profile.profile_image = request.FILES["profile_image"]
 
         user.save()
         profile.save()
@@ -480,7 +474,7 @@ def leave_club(request, club_id):
     if club.president == user:  # change if member logic is added
         messages.error(request, "You cannot leave your own club.")
     else:
-        club.members.remove(user)  # only if a many-to-many relationship exists
+        club.members.remove(user)
     return redirect('profile')
 
 

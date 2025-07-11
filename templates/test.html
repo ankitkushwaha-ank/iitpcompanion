@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Mr.h4cker.me">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home | IITP Companion</title>
+    <link rel="icon" href="/static/images/favicon.png">
+</head>
+
+
+    <!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IITP Companion+ Header</title>
+  <link rel="stylesheet" href="/static/css/header.css">
+  <link rel="icon" href="/static/images/favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <a href="/" class="logo-link">
+          <img style="width:85px; margin-left:10px; " src="/static/images/iitpcomapanion1.png" alt="IIT Patna Logo" class="logo-img">
+<!--          <span class="logo-text">IITP Companion+</span>-->
+        </a>
+      </div>
+
+<ul class="nav-links" id="nav-links">
+  <li><a href="/" class="active">Home</a></li>
+  <li><a href="/food/" class="">Order Food</a></li>
+  <li><a href="/tracker/" class="">Track</a></li>
+  <li><a href="/assignment/" class="">Assignments</a></li>
+  <li><a href="/events/" class="">Events Calender</a></li>
+</ul>
+
+
+      <div class="user-account" id="user-account">
+
+          <div class="notification-wrapper" id="notificationWrapper">
+            <div class="icon-box" id="notificationIcon">
+              <img style="margin-right:10px;" src="/static/images/bell.png" alt="Notifications" class="nav-icon">
+            </div>
+            <div class="notification-dropdown" id="notificationDropdown">
+              <div class="notification-header">
+                <span><strong>Notifications</strong></span>
+                <span class="notification-actions">
+                  <a href="/notifications/mark-read/" title="Mark all as read">✔️</a>
+                </span>
+              </div>
+              <div class="notification-body">
+
+
+                    <div class="notification-item unread">
+                      <p>Your event was successfully added!</p>
+                      <small>Jun 19, 21:55</small>
+                    </div>
+
+                    <div class="notification-item unread">
+                      <p>Your event was successfully added!</p>
+                      <small>Jun 19, 20:02</small>
+                    </div>
+
+                    <div class="notification-item ">
+                      <p>Your event was successfully added!</p>
+                      <small>Jun 19, 19:58</small>
+                    </div>
+
+                    <div class="notification-item ">
+                      <p>Your event was successfully added!</p>
+                      <small>Jun 19, 16:00</small>
+                    </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <img class="user-avatar" src="/media/profile_images/467553271_763334865954494_796117_omxbgsx.jpg"
+             alt="Profile Picture">
+          <span class="arrow-down">
+            <img style="height:15px; width:15px;" src="/static/images/down.png" alt="Arrow Down">
+          </span>
+
+          <ul class="account-dropdown" id="account-dropdown">
+            <li class="username-item"><strong>hacker</strong></li>
+            <li><a href="/profile/">Profile</a></li>
+            <li><a href="/food/my-orders/">My Order</a></li>
+            <li><a href="/maps/">Campus Map</a></li>
+            <li><a href="/student_clubs/">Students Club</a></li>
+            <li><a href="/contact-us/">Feedback</a></li>
+            <li><a href="/auth/login/">Switch Account</a></li>
+            <li><a href="/auth/logout/">Logout</a></li>
+          </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('mobile-menu');
+      const navLinks = document.getElementById('nav-links');
+      const userAccount = document.getElementById('user-account');
+      const notificationIcon = document.getElementById('notificationIcon');
+      const notificationWrapper = document.getElementById('notificationWrapper');
+
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', (event) => {
+          event.stopPropagation();
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('open');
+        });
+      }
+
+
+      if (userAccount) {
+        userAccount.addEventListener('click', function (event) {
+          event.stopPropagation();
+          this.classList.toggle('active');
+        });
+      }
+
+      if (notificationIcon && notificationWrapper) {
+        notificationIcon.addEventListener('click', function (event) {
+          event.stopPropagation();
+          notificationWrapper.classList.toggle('active');
+        });
+      }
+
+
+      document.addEventListener('click', function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('open');
+        }
+        if (!userAccount.contains(e.target)) {
+          userAccount.classList.remove('active');
+        }
+        if (!notificationWrapper.contains(e.target)) {
+          notificationWrapper.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+<body>
+
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+     <section class="hero-carousel">
+      <div class="carousel-track">
+        <img src="/static/images/hero2.jpg" class="carousel-slide active" />
+        <img src="/static/images/hero9.png" class="carousel-slide" />
+        <img src="/static/images/hero1.jpg" class="carousel-slide" />
+<!--        <img src="/static/images/hero8.png" class="carousel-slide" />-->
+      </div>
+
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+
+      <div class="carousel-dots"></div>
+    </section>
+
+    <section  class="hero">
+        <div class="hero-left">
+            <h1>Simplifying campus life for IIT students</h1>
+        </div>
+        <div class="hero-right">
+            <p> IITP Companion+ is your all-in-one platform designed to enhance your
+                campus experience at IIT Patna. From convenient canteen ordering to real
+                time tracking of transport and event alerts, we make student life easier and
+                more connected</p>
+            <div class="hero-buttons">
+
+                <a href="/about/">
+                    <button  class="black">Learn More</button>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- now = Convenience part  -->
+    <section class=" feature feature-convenience">
+        <div class="feature-left">
+            <div class="feature-text">
+                <h4>Convenience</h4>
+                <h2>Order your favorite food with ease</h2>
+
+                <img src="/static/images/deliver-food.jpg" alt="canteen order Preview" width="500px">
+
+                <p>Experience hassle-free dining with our canteen ordering feature. Choose from a variety of delicious
+                    meals and
+                    have them delivered right to you.</p>
+                <div class="feature-highlights">
+                    <div>
+                        <h3>50% </h3>
+                        <p>Quick and easy meal selection at your fingertips. </p>
+                    </div>
+                </div>
+                <div class="feature-buttons">
+
+                        <a href="/food/">
+                            <button class="black">Order</button>
+                        </a>
+                        <a href="/about/">
+                            <button class="white">Learn More</button>
+                        </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="feature-right">
+            <div class="feature-image">
+                <img src="/static/images/deliver-food.jpg" alt="canteen order Preview" width="500px">
+            </div>
+        </div>
+    </section>
+
+    <!-- Track section  -->
+    <section class="feature feature-track">
+        <div class="feature-left">
+            <div class="feature-image">
+                <img src="/static/images/track_bus.jpg" alt="Real time tracking preview" width="500px">
+            </div>
+        </div>
+        <div class="feature-right">
+            <div class="feature-text">
+                <h4>Track</h4>
+                <h2>Stay on time with Real-time tracking </h2>
+                <img src="/static/images/track_bus.jpg" alt="Real time tracking preview" width="500px">
+                <p> Never miss your bus or train again! Our real-time tracking feature keeps you updated on schedules
+                    and delays.</p>
+                <div class="feature-highlights">
+                    <div>
+                        <h3>Instant Updates</h3>
+                        <p>Get live updates on bus and train arrivals right at your fingertips.</p>
+                    </div>
+                    <div>
+                        <h3>Easy navigation</h3>
+                        <p>Navigate campus and city transport effortlessly with our intuitive interface.</p>
+                    </div>
+                </div>
+                <div class="feature-buttons">
+
+                        <a href="/about/">
+                            <button class="white" >Learn More</button>
+                        </a>
+                        <a href="/tracker/">
+                            <button class="black" >Track</button>
+                        </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ALERTS -->
+
+    <section class="Alert">
+        <div class="Alert-Left Alert-text">
+            <h2>Enhance Your Campus Experience
+                with Our Innovative Feedback and
+                Alert System</h2>
+        </div>
+        <div class="Alert-Right Alert-text">
+            <p>
+                Our feedback system empowers students to share their thoughts on clubs
+                and services, ensuring their voices are heard. Stay updated with real-time
+                alerts for events and assignments, so you never miss an important moment.
+                Engage more deeply with campus life and make the most of your time at IIT
+                Patna.
+            </p>
+
+                <a href="/assignment/">
+                    <button class="abtn">Your Assignments</button>
+                </a>
+
+
+        </div>
+    </section>
+
+    <section class="feedbackimg">
+
+        <div class="feedbackimg1">
+            <img src="/static/images/1.jpg" alt="balnk image" width="400px">
+            <h2>Streamlined Feedback for Clubs and Timely Alerts for Events and Assignments </h2>
+            <p>
+                Your input shapes our community, and timely alerts keep you informed.
+            </p>
+        </div>
+        <div>
+            <img src="/static/images/assignments.jpg" alt="balnk image" width="400px">
+            <h2>Stay Informed with Real-Time Alerts
+                for Campus Events and Assignments</h2>
+            <p>
+                Receive instant notifications about upcoming events and
+                important deadlines.
+            </p>
+        </div>
+        <div class="feedbackimg3">
+            <img src="/static/images/feedback.jpg" alt="black image" width="400px">
+            <h2>
+                Join the Conversation: Share Your
+                Feedback on Clubs and Services
+            </h2>
+            <p>
+                Your feedback is crucial in enhancing our campus
+                services and activities.
+            </p>
+        </div>
+    </section>
+
+    <!-- student feed back   -->
+    <section class="studentfeedback">
+        <div class="studentfeedbackhead">
+            <h2>
+                Student Feedback
+            </h2>
+        </div>
+        <div class="studentfeedbackpara">
+        </div>
+    </section>
+
+
+<section class="feedback-crafto-style">
+
+  <div class="review-card">
+    <div class="user-info">
+      <img src="/static/images/femaleimg.png" alt="female" class="avatar">
+      <div>
+        <h4 class="username">Niharika</h4>
+        <span class="rating">★ 5</span>
+      </div>
+    </div>
+    <p class="review-text">
+      "This platform has made managing my schedule so easy! The content is peaceful and organized — really brightens up my day."
+    </p>
+  </div>
+
+  <div class="review-card">
+    <div class="user-info">
+      <img src="/static/images/male.jpeg" alt="male" class="avatar">
+      <div>
+        <h4 class="username">why_SO.SID</h4>
+        <span class="rating">★ 5</span>
+      </div>
+    </div>
+    <p class="review-text">
+      "I love the convenience of ordering food online! Their collections match every kind of vibe — amazing experience."
+    </p>
+  </div>
+
+  <div class="review-card">
+    <div class="user-info">
+      <img src="/static/images/sillycat.jpeg" alt="cat" class="avatar">
+      <div>
+        <h4 class="username">Always_Arohi</h4>
+        <span class="rating">★ 5</span>
+      </div>
+    </div>
+    <p class="review-text">
+      "Real-time tracking has saved me so much time. From visuals to features, it's just perfect!"
+    </p>
+  </div>
+
+</section>
+
+
+
+    <!-- connect -->
+
+    <section class="connect">
+
+        <div class="connect-left">
+
+
+            <span>
+
+                <h4>
+                    Connect
+                </h4>
+            </span>
+
+            <span>
+                <h1>Get in touch</h1>
+            </span>
+
+
+            <span>
+                <h2>We'd love to hear from you!</h2>
+            </span>
+
+
+        </div>
+
+
+        <div class="none-img">
+            <img width="832px" src="/static/images/map-placeholder.png" alt="">
+        </div>
+
+
+
+        <div class="connectflex">
+
+            <div class="connect-para">
+
+
+                <div class="connect-contacts">
+                    <div class="connect-mail">
+                        <img src="/static/icons/mail_32.svg" alt="">
+                        <div>
+
+                            <h3>Email</h3>
+                            <p>Contact us anytime</p>
+                        </div>
+                        <a href="/contact-us/">info@Companion.com</a>
+                    </div>
+
+
+                    <div class="connect-mail">
+                        <img src="/static/icons/call_32.svg" alt="">
+                        <div>
+
+                            <h3>phone</h3>
+                            <p>Reach us at</p>
+                        </div>
+                        <a href="#">+91-1234567890</a>
+                    </div>
+
+
+
+
+                    <div class="connect-mail">
+                        <img src="/static/icons/location_on_32.svg" alt="">
+
+                        <div class="Office-address">
+
+                            <h3>Office</h3>
+                            <p> IIT Patna Campus, Patna, Bihar, India</p>
+                        </div>
+
+                        <div class="connect-office">
+
+                            <span><a
+                                    href="https://www.google.com/maps/dir//IIT,+Bihta+Kanpa+Rd,+Patna,+Dayalpur+Daulatpur,+Bihar+801106/@25.5356218,84.7688951,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39ed577f6954a4ab:0x6ce8f1b9fc2aa02a!2m2!1d84.8512966!2d25.5356448?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D">Find
+                                    us</a></span>
+                            <img src="/static/icons/chevron_right_32.svg" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="connect-imagemain">
+                <div id="map-container"></div>
+<!--                <img width="832px" src="/static/images/map-placeholder.png" alt="">-->
+            </div>
+        </div>
+    </section>
+
+   <script src="/static/js/index.js"></script>
+
+
+
+</body>
+    <head>
+
+    <link rel="stylesheet" href="/static/css/footer.css">
+</head>
+<style>
+</style>
+<footer class="footer">
+        <div class="footer-logo">
+            <a href="/">
+                <img src="/static/images/iitpcomapanion1.png" alt="IIT Patna Logo">
+            </a>
+        </div>
+        <div class="footer-content">
+
+            <div class="footer-text">
+                <p>
+                    Subscribe to our newsletter for the latest features and updates.
+                </p>
+                <div>
+                    <form method="POST" action="/subscribe/">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="DaYKFibrre7fbaTjwIOuxAs31aCZ4VdfN1CfvVHW0vrxVU7nkfEAQDVqB5V6Kf9G">
+                        <div class="foot-input">
+                            <input type="email" name="email" placeholder="Your email here">
+                            <button type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+                <p>By subscribing, you accept our Privacy Policy and consent to receive updates.</p>
+            </div>
+
+            <div class="quicklinks">
+                <h3>Quick Links</h3>
+                <p> <a href="/maps/">Campus map</a></p>
+                <p><a href="/events/">Event Calander</a></p>
+                <p><a href="/student_clubs/">Student Clubs</a></p>
+                <p><a href="/about/">About US</a></p>
+                <p><a href="/contact-us/">Contact US</a></p>
+            </div>
+
+            <div class="follow">
+                <h3>Follow Us</h3>
+                <div class="insta">
+                    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                        clip-rule="evenodd" viewBox="0 0 512 512">
+                        <path fill-rule="nonzero"
+                            d="M170.663 256.157c-.083-47.121 38.055-85.4 85.167-85.482 47.121-.092 85.407 38.029 85.499 85.159.091 47.13-38.047 85.4-85.176 85.492-47.112.09-85.399-38.039-85.49-85.169zm-46.108.092c.141 72.602 59.106 131.327 131.69 131.185 72.592-.14 131.35-59.089 131.209-131.691-.141-72.577-59.114-131.336-131.715-131.194-72.585.141-131.325 59.114-131.184 131.7zm237.104-137.092c.033 16.954 13.817 30.682 30.772 30.649 16.961-.034 30.689-13.811 30.664-30.765-.033-16.954-13.818-30.69-30.78-30.656-16.962.033-30.689 13.818-30.656 30.772zm-208.696 345.4c-24.958-1.086-38.511-5.234-47.543-8.709-11.961-4.628-20.496-10.177-29.479-19.093-8.966-8.951-14.532-17.461-19.202-29.397-3.508-9.033-7.73-22.569-8.9-47.527-1.269-26.983-1.559-35.078-1.683-103.433-.133-68.338.116-76.434 1.294-103.441 1.069-24.941 5.242-38.512 8.709-47.536 4.628-11.977 10.161-20.496 19.094-29.478 8.949-8.983 17.459-14.532 29.403-19.202 9.025-3.526 22.561-7.715 47.511-8.9 26.998-1.278 35.085-1.551 103.423-1.684 68.353-.133 76.448.108 103.456 1.294 24.94 1.086 38.51 5.217 47.527 8.709 11.968 4.628 20.503 10.145 29.478 19.094 8.974 8.95 14.54 17.443 19.21 29.413 3.524 8.999 7.714 22.552 8.892 47.494 1.285 26.998 1.576 35.094 1.7 103.432.132 68.355-.117 76.451-1.302 103.442-1.087 24.957-5.226 38.52-8.709 47.56-4.629 11.953-10.161 20.488-19.103 29.471-8.941 8.949-17.451 14.531-29.403 19.201-9.009 3.517-22.561 7.714-47.494 8.9-26.998 1.269-35.086 1.56-103.448 1.684-68.338.133-76.424-.124-103.431-1.294zM149.977 1.773c-27.239 1.286-45.843 5.648-62.101 12.019-16.829 6.561-31.095 15.353-45.286 29.603C28.381 57.653 19.655 71.944 13.144 88.79c-6.303 16.299-10.575 34.912-11.778 62.168C.172 178.264-.102 186.973.031 256.489c.133 69.508.439 78.234 1.741 105.548 1.302 27.231 5.649 45.827 12.019 62.092 6.569 16.83 15.353 31.089 29.611 45.289 14.25 14.2 28.55 22.918 45.404 29.438 16.282 6.294 34.902 10.583 62.15 11.777 27.305 1.203 36.022 1.468 105.521 1.336 69.532-.133 78.25-.44 105.555-1.734 27.239-1.302 45.826-5.664 62.1-12.019 16.829-6.585 31.095-15.353 45.288-29.611 14.191-14.251 22.917-28.55 29.428-45.404 6.304-16.282 10.592-34.904 11.777-62.134 1.195-27.323 1.478-36.049 1.344-105.557-.133-69.516-.447-78.225-1.741-105.522-1.294-27.256-5.657-45.844-12.019-62.118-6.577-16.829-15.352-31.08-29.602-45.288-14.25-14.192-28.55-22.935-45.404-29.429-16.29-6.304-34.903-10.6-62.15-11.778C333.747.164 325.03-.101 255.506.031c-69.507.133-78.224.431-105.529 1.742z" />
+                    </svg>
+                    <h4>Instagram</h4>
+                </div>
+
+                <div class="twitter">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                        clip-rule="evenodd" viewBox="0 0 512 462.799">
+                        <path fill-rule="nonzero"
+                            d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
+                    </svg>
+                    <h3>X</h3>
+                </div>
+
+                <div class="linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                        clip-rule="evenodd" viewBox="0 0 512 509.64">
+                        <rect width="512" height="509.64" rx="115.61" ry="115.61" />
+                        <path fill="#fff"
+                            d="M204.97 197.54h64.69v33.16h.94c9.01-16.16 31.04-33.16 63.89-33.16 68.31 0 80.94 42.51 80.94 97.81v116.92h-67.46l-.01-104.13c0-23.81-.49-54.45-35.08-54.45-35.12 0-40.51 25.91-40.51 52.72v105.86h-67.4V197.54zm-38.23-65.09c0 19.36-15.72 35.08-35.08 35.08-19.37 0-35.09-15.72-35.09-35.08 0-19.37 15.72-35.08 35.09-35.08 19.36 0 35.08 15.71 35.08 35.08zm-70.17 65.09h70.17v214.73H96.57V197.54z" />
+                    </svg>
+                    <h4>LinkedIn</h4>
+                </div>
+
+                <div class="youtube">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 86.43">
+                        <defs>
+                            <style>
+                                .cls-1,
+                                .cls-2 {
+                                    fill-rule: evenodd;
+                                }
+
+                                .cls-2 {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <title>black-and-white-youtube</title>
+                        <path class="cls-1"
+                            d="M121.63,18.65s-1.2-8.47-4.9-12.19c-4.67-4.89-9.91-4.92-12.31-5.21C87.24,0,61.43,0,61.43,0h0s-25.8,0-43,1.25c-2.4.29-7.63.31-12.31,5.21C2.4,10.18,1.22,18.65,1.22,18.65A187.15,187.15,0,0,0,0,38.55v9.31a187.65,187.65,0,0,0,1.22,19.9S2.42,76.23,6.09,80c4.68,4.9,10.82,4.74,13.57,5.26,9.83.94,41.78,1.22,41.78,1.22s25.83,0,43-1.27c2.41-.29,7.64-.32,12.32-5.21,3.69-3.72,4.89-12.2,4.89-12.2a187.15,187.15,0,0,0,1.22-19.9V38.54a189.26,189.26,0,0,0-1.25-19.9Z" />
+                        <polygon class="cls-2" points="48.71 59.16 48.71 24.63 81.9 41.95 48.71 59.16 48.71 59.16" />
+                    </svg>
+                    <h4>YouTube</h4>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <div class="Rights-reserved" style="padding: 0; margin: 0;">
+        <p>&copy; 2025 IITP Companion+. All rights reserved.</p>
+    </div>
+</html>

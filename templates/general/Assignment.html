@@ -56,6 +56,52 @@
   <section class="main">
     <div class="main-h">
       <h2>Your Assignments</h2>
+
+      <p style="text-align:center;" class="text-gray-600 text-lg italic">No new assignments found on Moodle at the moment.</p><br><br>
+<!--    </div>-->
+<!--    <div class="main-cards">-->
+<!--      {% for a in assignments %}-->
+<!--      <a href="{{ a.link }}" target="_blank" style="text-decoration: none; color: inherit;">-->
+<!--        <div class="main-card">-->
+<!--          <div class="mainc-head">-->
+<!--            <div>-->
+<!--              <form method="post" action="{% url 'toggle_assignment_status' %}" class="assignment-form">-->
+<!--                {% csrf_token %}-->
+<!--                <input type="hidden" name="assignment_id" value="{{ a.id }}">-->
+<!--                <button type="submit"-->
+<!--                  class="circle-button {% if a.status == 'completed' %}completed{% endif %}"></button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--            <p style="font-size: 0.9rem; color: #6b7280;">{{ a.subject }}</p>-->
+<!--              <h2>{{ a.title }}</h2>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="main-data" style="justify-content: space-between;">-->
+<!--            <div class="main-date">-->
+<!--              <p>-->
+<!--                Opened: {{ a.due_start|date:" d F Y, h:i A" }}<br>-->
+<!--                Due: {{ a.due_end|date:" d F Y, h:i A" }}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <div class="priority" style="align-self: flex-end;">-->
+<!--              {% if a.priority_status == 'overdue' %}-->
+<!--                <p class="priority-text overdue-priority">Date Over</p>-->
+<!--              {% else %}-->
+<!--                <p class="priority-text {{ a.priority_status }}-priority">{{ a.priority_status|title }} Priority</p>-->
+<!--              {% endif %}-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </a>-->
+<!--      {% endfor %}-->
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="main-h">
+      <h2>Dummy Assignments</h2>
     </div>
     <div class="main-cards">
       {% for a in assignments %}
