@@ -127,10 +127,19 @@ def update_menu_item(request, item_id):
 
 
 @require_login
+
+
+
 def add_menu_item(request):
     owner_id = request.session.get("owner_id")
     owner = get_object_or_404(RegisterOwner, id=owner_id)
-    canteen = get_object_or_404(RegisterCanteen, owner=owner)
+
+    # Get the first canteen linked to this owner
+    canteen = RegisterCanteen.objects.filter(owner=owner).first()
+
+    if not canteen:
+        messages.error(request, "No canteen found for this owner.")
+        return redirect("owner_dashboard")  # Or an error page
 
     if request.method == "POST":
         MenuItem.objects.create(
@@ -140,13 +149,14 @@ def add_menu_item(request):
             price=request.POST.get("price"),
             category=request.POST.get("category"),
             delivery_time="20 min",
-            image = request.FILES.get('image')
+            image=request.FILES.get("image"),
         )
 
         messages.success(request, "Menu item added.")
         return redirect("owner_dashboard")
 
     return render(request, "Restaurant/restaurant_admin.html")
+
 
 @require_login
 def owner_profile(request):
