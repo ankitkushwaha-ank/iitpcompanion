@@ -56,7 +56,7 @@
 ![Home Page](static/screenshots/home.png)  
 ![Order Page](static/screenshots/order_food.png)  
 ![Assignment Page](static/screenshots/assignments.png)  
-![Event Calendar](static/screenshots/event_calendar.png)
+![Event Calendar](static/screenshots/event_calender.png)
 ![Event Calendar](static/screenshots/blog.png)
 
 ---
