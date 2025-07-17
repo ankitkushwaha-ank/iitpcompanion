@@ -45,13 +45,17 @@
 ## 📸 Screenshots
 
 > Include screenshots of:
+> - Login 
 > - Dashboard/Homepage  
 > - Food Ordering Page  
 > - Event Notifier  
 > - Virtual Event Player  
 > - Blog or Feedback UI
-
-*(Add them here using: `![Alt text](screenshots/home.png)`)*
+`![login page](static/screenshots/login.png)`
+`![home page](static/static/screenshots/home.png)`
+`![order pages](static/screenshots/order_food.png)`
+`![Assignmnet page](static/screenshots/assignments.png)`
+`![event calender ](static/scenshots/event_calend](r.png)`
 
 ---
 
