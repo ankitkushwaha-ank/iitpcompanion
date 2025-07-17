@@ -51,11 +51,13 @@
 > - Event Notifier  
 > - Virtual Event Player  
 > - Blog or Feedback UI
-`![login page](static/screenshots/login.png)`
-`![home page](static/static/screenshots/home.png)`
-`![order pages](static/screenshots/order_food.png)`
-`![Assignmnet page](static/screenshots/assignments.png)`
-`![event calender ](static/scenshots/event_calend](r.png)`
+
+![Login Page](static/screenshots/login.png)  
+![Home Page](static/screenshots/home.png)  
+![Order Page](static/screenshots/order_food.png)  
+![Assignment Page](static/screenshots/assignments.png)  
+![Event Calendar](static/screenshots/event_calendar.png)
+![Event Calendar](static/screenshots/blog.png)
 
 ---
 
