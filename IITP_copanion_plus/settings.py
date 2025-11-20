@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-v0!twna&w!=k(4y7^&bt5wn(x#lc4o$p4tcjqfs$@j75iby)7)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # It is recommended to set this to False in production later
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['iitpcompanion.onrender.com', 'cpn.iitpcep.online', 'localhost', '127.0.0.1']
 
